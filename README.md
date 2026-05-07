@@ -248,3 +248,9 @@ The backend exposes the following route groups under `/api`:
 - `/api/salesmaster/salesdetails` - sales line item management
 
 Full documentation is available through Swagger at `http://localhost:5101/swagger` when the backend is running.
+
+---
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
