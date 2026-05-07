@@ -29,9 +29,91 @@ A web-based point of sale system built with a React frontend and an ASP.NET Core
 
 ```
 PointOfSaleApp/
-  Frontend/          React frontend (Vite)
-  POSWebApi/         ASP.NET Core Web API
-  db-scripts/        SQL scripts to set up the database
+  db-scripts/
+    Tables.sql
+    Product_sps.sql
+    Salesperson_sps.sql
+    SalesMaster_sps.sql
+    SalesDetail_sps.sql
+
+  Frontend/
+    public/
+    src/
+      api/
+        client.js                      axios instance with base URL config
+      contexts/
+        ProductContext.jsx
+        SalespersonContext.jsx
+        SalesContext.jsx
+      features/
+        common/
+          ConfirmModal.jsx
+          DataTable.jsx
+          Modal.jsx
+        product/
+          ProductForm.jsx
+          ProductRow.jsx
+        sales/
+          PointOfSale.jsx              main POS screen
+          ProductAutoComplete.jsx
+          ProductGridModal.jsx
+          SalesGrid.jsx
+          SalesRecords.jsx
+      pages/
+        ProductsPage.jsx
+        SalespersonPage.jsx
+      App.jsx
+      main.jsx
+    index.html
+    package.json
+    vite.config.js
+    tailwind.config.js
+
+  POSWebApi/
+    Controllers/
+      ProductController.cs
+      SalespersonController.cs
+      SalesMasterController.cs        also handles sales detail endpoints
+    DTOs/
+      Request/
+        ProductRequestModels.cs
+        SalespersonRequestModels.cs
+        SalesMasterRequestModels.cs
+        SalesDetailRequestModels.cs
+      Response/
+        ProductResponseModels.cs
+        SalespersonResponse.cs
+        SalesMasterResponse.cs
+        SalesDetailResponse.cs
+    Repositories/
+      Product/
+        Interface/IProductRepository.cs
+        ProductRepository.cs
+      Salesperson/
+        Interface/ISalespersonRepository.cs
+        SalespersonRepository.cs
+      SalesMaster/
+        Interface/ISalesMasterRepository.cs
+        SalesMasterRepository.cs
+      SalesDetail/
+        Interface/ISalesDetailRepository.cs
+        SalesDetailRepository.cs
+    Services/
+      Product/
+        Interface/IProductService.cs
+        ProductService.cs
+      Salesperson/
+        Interface/ISalespersonService.cs
+        SalespersonService.cs
+      SalesMaster/
+        Interface/ISalesMasterService.cs
+        SalesMasterService.cs
+      SalesDetail/
+        Interface/ISalesDetailService.cs
+        SalesDetailService.cs
+    Program.cs
+    appsettings.json
+    POSWebApi.csproj
 ```
 
 ---
