@@ -69,7 +69,7 @@ PointOfSaleApp/
     vite.config.js
     tailwind.config.js
 
-  POSWebApi/
+  API/
     Controllers/
       ProductController.cs
       SalespersonController.cs
