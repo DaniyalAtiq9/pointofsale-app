@@ -214,16 +214,16 @@ export default function PointOfSale() {
     <div>
 
       {/* Header */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4 py-1">
-          <h6 className="text-xl font-bold text-gray-800">
+          <h6 className="text-xl font-bold text-gray-800 dark:text-gray-100">
             Point of Sale
           </h6>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="bg-white border-b border-gray-200">
+      <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex gap-6">
 
@@ -231,8 +231,8 @@ export default function PointOfSale() {
               onClick={() => setActiveTab('sale')}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === 'sale'
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-600'
+                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                  : 'border-transparent text-gray-600 dark:text-gray-400'
               }`}
             >
               Sale
@@ -247,8 +247,8 @@ export default function PointOfSale() {
               }}
               className={`py-2 px-1 border-b-2 font-medium text-sm ${
                 activeTab === 'records'
-                  ? 'border-blue-500 text-blue-600'
-                  : 'border-transparent text-gray-600'
+                  ? 'border-blue-500 text-blue-600 dark:text-blue-400'
+                  : 'border-transparent text-gray-600 dark:text-gray-400'
               }`}
             >
               Records
@@ -272,26 +272,26 @@ export default function PointOfSale() {
             )}
 
             {/* Header Info */}
-            <div className="bg-white rounded border border-gray-200 p-2 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 p-2 shadow-sm">
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
 
                 {/* Display-only date */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Date
                   </label>
                   <input
                     type="text"
                     value={new Date().toLocaleString()}
                     disabled
-                    className="w-full px-2 py-1 bg-gray-50 border border-gray-300 rounded text-sm text-gray-600"
+                    className="w-full px-2 py-1 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded text-sm text-gray-600 dark:text-gray-400"
                   />
                 </div>
 
                 {/* Salesperson */}
                 <div>
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Salesperson
                   </label>
                   <select
@@ -299,7 +299,7 @@ export default function PointOfSale() {
                     onChange={(e) =>
                       setSalesperson(parseInt(e.target.value) || null)
                     }
-                    className="w-full px-2 py-1 border border-gray-300 rounded text-sm"
+                    className="w-full px-2 py-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded text-sm"
                   >
                     <option value="">--Select Salesperson--</option>
                     {salespersons.map((sp) => (
@@ -314,15 +314,15 @@ export default function PointOfSale() {
             </div>
 
             {/* Product Search */}
-            <div className="bg-white rounded border border-gray-200 p-2 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 p-2 shadow-sm">
 
               <div className="flex flex-col items-center">
 
-                <label className="text-xs font-medium text-gray-700 mb-1">
+                <label className="text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
                   Add Product
                 </label>
 
-                <div className="flex items-center w-full max-w-2xl border border-gray-300 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500">
+                <div className="flex items-center w-full max-w-2xl border border-gray-300 dark:border-gray-600 rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-blue-500">
 
                   <div className="flex-1">
                     <ProductAutoComplete products={products} />
@@ -330,7 +330,7 @@ export default function PointOfSale() {
 
                   <button
                     onClick={() => setIsProductGridOpen(true)}
-                    className="p-2 bg-blue-600 text-white hover:bg-blue-700 border-l border-gray-300"
+                    className="p-2 bg-blue-600 text-white hover:bg-blue-700 border-l border-gray-300 dark:border-gray-600"
                   >
                     🛒
                   </button>
@@ -340,18 +340,18 @@ export default function PointOfSale() {
             </div>
 
             {/* Grid */}
-            <div className="bg-white rounded border border-gray-200 p-2 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 p-2 shadow-sm">
               <SalesGrid />
             </div>
 
             {/* Summary */}
-            <div className="bg-white rounded border border-gray-200 p-2 shadow-sm">
+            <div className="bg-white dark:bg-gray-800 rounded border border-gray-200 dark:border-gray-700 p-2 shadow-sm">
 
               <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
 
                 {/* Comments */}
                 <div className="md:col-span-2">
-                  <label className="block text-xs font-medium text-gray-700 mb-1">
+                  <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
                     Notes
                   </label>
                   <textarea
@@ -360,18 +360,18 @@ export default function PointOfSale() {
                     onChange={(e) =>
                       setComments(e.target.value)
                     }
-                    className="w-full px-2 py-1 border border-gray-300 rounded text-sm"
+                    className="w-full px-2 py-1 border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-gray-100 rounded text-sm"
                   />
                 </div>
 
                 {/* Total + Action Buttons */}
                 <div className="flex flex-col justify-end">
 
-                  <div className="text-xs text-gray-600">
+                  <div className="text-xs text-gray-600 dark:text-gray-400">
                     Subtotal
                   </div>
 
-                  <div className="text-2xl font-bold">
+                  <div className="text-2xl font-bold dark:text-gray-100">
                     {(currentSale.total || 0).toFixed(2)}
                   </div>
 
@@ -449,16 +449,16 @@ export default function PointOfSale() {
           <div className="relative flex items-center justify-center min-h-screen p-4 pointer-events-none">
             {/* Modal Content - re-enable pointer events */}
             <div 
-              className="bg-white rounded-lg p-6 max-w-md w-full mx-4 pointer-events-auto"
+              className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4 pointer-events-auto"
             >
-              <h3 className="text-lg font-bold mb-4">Confirm Delete</h3>
-              <p className="text-gray-700 mb-6">
+              <h3 className="text-lg font-bold mb-4 dark:text-gray-100">Confirm Delete</h3>
+              <p className="text-gray-700 dark:text-gray-300 mb-6">
                 Are you sure you want to delete Sale #{deleteTarget.saleId}? This action cannot be undone.
               </p>
               <div className="flex gap-3 justify-end">
                 <button
                   onClick={cancelDelete}
-                  className="px-4 py-2 bg-gray-300 text-gray-700 rounded hover:bg-gray-400"
+                  className="px-4 py-2 bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-400 dark:hover:bg-gray-600"
                 >
                   Cancel
                 </button>

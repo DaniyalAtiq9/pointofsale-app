@@ -31,22 +31,22 @@ export default function ConfirmModal({
       <div className="relative flex items-center justify-center min-h-screen p-4 pointer-events-none">
         {/* Modal box - re-enable pointer events */}
         <div 
-          className="w-full max-w-sm bg-white rounded-xl shadow-xl p-6 pointer-events-auto"
+          className="w-full max-w-sm bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 pointer-events-auto"
         >
           
           {/* Title */}
-          <h2 className="text-lg font-semibold text-gray-800 mb-2">
+          <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">
             {title}
           </h2>
 
           {/* Message */}
-          <p className="text-gray-600 mb-6">{message}</p>
+          <p className="text-gray-600 dark:text-gray-300 mb-6">{message}</p>
 
           {/* Buttons */}
           <div className="flex gap-2 justify-end">
             <button
               onClick={onCancel}
-              className="px-4 py-2 bg-gray-200 rounded-lg hover:bg-gray-300"
+              className="px-4 py-2 bg-gray-200 dark:bg-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600"
             >
               {cancelText}
             </button>

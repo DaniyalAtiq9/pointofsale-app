@@ -34,7 +34,7 @@ export default function Modal({ isOpen, onClose, children }) {
         
         {/* Modal box - re-enable pointer events */}
         <div 
-          className="w-full max-w-md bg-white rounded-xl shadow-xl p-6 max-h-[90vh] overflow-y-auto pointer-events-auto"
+          className="w-full max-w-md bg-white dark:bg-gray-800 rounded-xl shadow-xl p-6 max-h-[90vh] overflow-y-auto pointer-events-auto"
         >
           {children}
         </div>

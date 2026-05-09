@@ -41,19 +41,19 @@ export default function ProductAutoComplete({ products = [] }) {
         placeholder="Search by product name or code..."
         value={searchTerm}
         onChange={(e) => handleSearch(e.target.value)}
-        className="w-full px-3 py-2 border-0 text-sm focus:outline-none"
+        className="w-full px-3 py-2 border-0 text-sm focus:outline-none dark:bg-gray-800 dark:text-gray-100 dark:placeholder-gray-400"
       />
 
       {filteredProducts.length > 0 && (
-        <div className="absolute top-full left-0 right-0 bg-white border border-gray-300 border-t-0 rounded-b max-h-48 overflow-y-auto z-10">
+        <div className="absolute top-full left-0 right-0 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 border-t-0 rounded-b max-h-48 overflow-y-auto z-10">
           {filteredProducts.map((product) => (
             <button
               key={product.productId}
               onClick={() => handleSelectProduct(product)}
-              className="w-full text-left px-3 py-2 hover:bg-blue-50 text-sm border-b last:border-0"
+              className="w-full text-left px-3 py-2 hover:bg-blue-50 dark:hover:bg-gray-700 text-sm border-b dark:border-gray-700 last:border-0 dark:text-gray-200"
             >
               <div className="font-medium">{product.name}</div>
-              <div className="text-xs text-gray-500">
+              <div className="text-xs text-gray-500 dark:text-gray-400">
                 {product.code} - PKR {product.retailPrice}
               </div>
             </button>

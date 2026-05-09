@@ -70,26 +70,26 @@ export default function ProductGridModal({ products = [], isOpen, onClose }) {
       <div className="relative flex items-center justify-center min-h-screen p-4 pointer-events-none">
         {/* Modal Content - re-enable pointer events */}
         <div 
-          className="bg-white rounded-lg shadow-2xl border-2 border-gray-300 p-6 max-w-2xl w-full max-h-[600px] flex flex-col pointer-events-auto"
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-2xl border-2 border-gray-300 dark:border-gray-600 p-6 max-w-2xl w-full max-h-[600px] flex flex-col pointer-events-auto"
         >
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-xl font-bold">Select Product</h2>
+            <h2 className="text-xl font-bold dark:text-gray-100">Select Product</h2>
             <button
               onClick={onClose}
-              className="text-gray-500 hover:text-gray-700 text-2xl"
+              className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 text-2xl"
             >
               ×
             </button>
           </div>
 
           {/* Compact List */}
-          <div className="flex-1 overflow-y-auto border border-gray-200 rounded">
+          <div className="flex-1 overflow-y-auto border border-gray-200 dark:border-gray-700 rounded">
             <table className="w-full text-sm">
-              <thead className="bg-gray-50 border-b sticky top-0">
+              <thead className="bg-gray-50 dark:bg-gray-700 border-b dark:border-gray-600 sticky top-0">
                 <tr>
-                  <th className="px-4 py-2 text-left font-medium">Code</th>
-                  <th className="px-4 py-2 text-center align-middle font-medium">Name</th>
-                  <th className="px-4 py-2 text-right font-medium">Price</th>
+                  <th className="px-4 py-2 text-left font-medium dark:text-gray-200">Code</th>
+                  <th className="px-4 py-2 text-center align-middle font-medium dark:text-gray-200">Name</th>
+                  <th className="px-4 py-2 text-right font-medium dark:text-gray-200">Price</th>
                 </tr>
               </thead>
               <tbody>
@@ -97,15 +97,15 @@ export default function ProductGridModal({ products = [], isOpen, onClose }) {
                   <tr
                     key={product.productId}
                     onClick={() => handleAddProduct(product)}
-                    className={`border-b cursor-pointer transition-all duration-200 ${
+                    className={`border-b dark:border-gray-700 cursor-pointer transition-all duration-200 ${
                       clickedProduct === product.productId
-                        ? 'bg-green-200 scale-[0.98]'
-                        : 'hover:bg-blue-50'
+                        ? 'bg-green-200 dark:bg-green-900 scale-[0.98]'
+                        : 'hover:bg-blue-50 dark:hover:bg-gray-700'
                     }`}
                   >
-                    <td className="px-4 py-3 text-gray-600">{product.code}</td>
-                    <td className="px-4 py-3 font-medium">{product.name}</td>
-                    <td className="px-4 py-3 text-right font-semibold text-blue-600">
+                    <td className="px-4 py-3 text-gray-600 dark:text-gray-300">{product.code}</td>
+                    <td className="px-4 py-3 font-medium dark:text-gray-100">{product.name}</td>
+                    <td className="px-4 py-3 text-right font-semibold text-blue-600 dark:text-blue-400">
                       PKR {product.retailPrice}
                     </td>
                   </tr>
@@ -115,22 +115,22 @@ export default function ProductGridModal({ products = [], isOpen, onClose }) {
           </div>
 
           {/* Pagination Controls */}
-          <div className="flex items-center justify-between mt-4 pt-4 border-t">
-            <div className="text-sm text-gray-600">
+          <div className="flex items-center justify-between mt-4 pt-4 border-t dark:border-gray-700">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               Page {currentPage} of {totalPages} ({products.length} products)
             </div>
             <div className="flex gap-2">
               <button
                 onClick={goToPreviousPage}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
               <button
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Next
               </button>

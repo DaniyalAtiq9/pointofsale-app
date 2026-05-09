@@ -117,13 +117,13 @@ export default function ProductForm({
     <Modal isOpen={isOpen} onClose={onClose}>
       {/* Header */}
       <div className="flex justify-between items-center mb-6">
-        <h2 className="text-lg font-semibold text-gray-800">
+        <h2 className="text-lg font-semibold text-gray-800 dark:text-gray-100">
           {isEditing ? 'Edit Product' : 'Add New Product'}
         </h2>
 
         <button
           onClick={onClose}
-          className="text-gray-500 text-xl font-bold"
+          className="text-gray-500 dark:text-gray-400 text-xl font-bold"
         >
           ×
         </button>
@@ -133,7 +133,7 @@ export default function ProductForm({
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Product Name */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Product Name
           </label>
           <input
@@ -142,7 +142,7 @@ export default function ProductForm({
             onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
           />
           {errors.name && (
             <p className="text-red-500 text-sm">{errors.name}</p>
@@ -151,7 +151,7 @@ export default function ProductForm({
 
         {/* Code */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Code
           </label>
           <input
@@ -160,7 +160,7 @@ export default function ProductForm({
             onChange={(e) =>
               setFormData({ ...formData, code: e.target.value })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
           />
           {errors.code && (
             <p className="text-red-500 text-sm">{errors.code}</p>
@@ -169,7 +169,7 @@ export default function ProductForm({
 
         {/* Cost Price */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Cost Price
           </label>
           <input
@@ -182,7 +182,7 @@ export default function ProductForm({
                 costPrice: e.target.value,
               })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
           />
           {errors.costPrice && (
             <p className="text-red-500 text-sm">
@@ -193,7 +193,7 @@ export default function ProductForm({
 
         {/* Retail Price */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
             Retail Price
           </label>
           <input
@@ -206,7 +206,7 @@ export default function ProductForm({
                 retailPrice: e.target.value,
               })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
           />
           {errors.retailPrice && (
             <p className="text-red-500 text-sm">
@@ -216,7 +216,7 @@ export default function ProductForm({
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-2 pt-3 border-t border-gray-200">
+        <div className="flex gap-2 pt-3 border-t border-gray-200 dark:border-gray-700">
           <button
             type="submit"
             className="flex-1 px-3 py-2 bg-blue-600 text-white rounded-lg"
@@ -227,7 +227,7 @@ export default function ProductForm({
           <button
             type="button"
             onClick={onClose}
-            className="flex-1 px-3 py-2 bg-gray-300 rounded-lg"
+            className="flex-1 px-3 py-2 bg-gray-300 dark:bg-gray-600 dark:text-gray-100 rounded-lg"
           >
             Cancel
           </button>

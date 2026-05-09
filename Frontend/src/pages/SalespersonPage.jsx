@@ -154,12 +154,12 @@ export default function SalespersonPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-8">
 
         {/* Header */}
         <div className="mb-6 text-center">
-          <h3 className="text-2xl font-bold text-gray-800">
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
             Sale Persons
           </h3>
         </div>
@@ -187,19 +187,19 @@ export default function SalespersonPage() {
           ]}
 renderRow={(sp) => (
   <>
-    <td className="px-6 py-3 font-medium text-gray-800 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 font-medium text-gray-800 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {sp.name}
     </td>
 
-    <td className="px-6 py-3 text-gray-700 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {sp.code}
     </td>
 
-    <td className="px-6 py-3 text-gray-700 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {new Date(sp.enteredDate).toLocaleDateString()}
     </td>
 
-    <td className="px-6 py-3 text-center space-x-2 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-center space-x-2 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       <button
         onClick={() => handleEdit(sp)}
         className="px-4 py-1 bg-blue-300 text-white rounded hover:bg-blue-400 text-sm"
@@ -220,22 +220,22 @@ renderRow={(sp) => (
 
         {/* Pagination Controls */}
         {salespersons.length > 0 && (
-          <div className="flex items-center justify-between mt-4 pt-4 border-t">
-            <div className="text-sm text-gray-600">
+          <div className="flex items-center justify-between mt-4 pt-4 border-t dark:border-gray-700">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               Page {currentPage} of {totalPages} ({salespersons.length} salespersons)
             </div>
             <div className="flex gap-2">
               <button
                 onClick={goToPreviousPage}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
               <button
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Next
               </button>
@@ -250,7 +250,7 @@ renderRow={(sp) => (
         isOpen={formOpen}
         onClose={() => setFormOpen(false)}
       >
-        <h2 className="text-lg font-semibold mb-4">
+        <h2 className="text-lg font-semibold mb-4 dark:text-gray-100">
           {editingSalesperson ? 'Edit Salesperson' : 'Add Salesperson'}
         </h2>
 
@@ -262,7 +262,7 @@ renderRow={(sp) => (
             onChange={(e) =>
               setFormData({ ...formData, name: e.target.value })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400"
           />
           {errors.name && (
             <p className="text-red-500 text-sm">{errors.name}</p>
@@ -274,7 +274,7 @@ renderRow={(sp) => (
             onChange={(e) =>
               setFormData({ ...formData, code: e.target.value })
             }
-            className="w-full px-4 py-2 border rounded-lg"
+            className="w-full px-4 py-2 border rounded-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100 dark:placeholder-gray-400"
           />
           {errors.code && (
             <p className="text-red-500 text-sm">{errors.code}</p>
@@ -291,7 +291,7 @@ renderRow={(sp) => (
             <button
               type="button"
               onClick={() => setFormOpen(false)}
-              className="flex-1 bg-gray-300 py-2 rounded-lg"
+              className="flex-1 bg-gray-300 dark:bg-gray-600 dark:text-gray-100 py-2 rounded-lg"
             >
               Cancel
             </button>

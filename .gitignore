@@ -11,7 +11,7 @@ POSWebApi/obj/
 POSWebApi/.vs/
 POSWebApi/*.user
 POSWebApi/*.suo
-POSWebApi/appsettings.Development.json
+API/appsettings.Development.json
 
 # OS
 .DS_Store

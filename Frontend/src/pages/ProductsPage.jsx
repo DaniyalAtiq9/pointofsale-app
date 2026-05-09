@@ -72,12 +72,12 @@ export default function ProductsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-6xl mx-auto px-4 py-8">
 
         {/* Header */}
         <div className="mb-6 text-center">
-          <h3 className="text-2xl font-bold text-gray-800">
+          <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
             Products
           </h3>
         </div>
@@ -106,23 +106,23 @@ export default function ProductsPage() {
           ]}
 renderRow={(product) => (
   <>
-    <td className="px-6 py-3 font-medium text-gray-800 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 font-medium text-gray-800 dark:text-gray-100 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {product.name}
     </td>
 
-    <td className="px-6 py-3 text-gray-700 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {product.code}
     </td>
 
-    <td className="px-6 py-3 text-right text-gray-700 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-right text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {parseFloat(product.costPrice).toFixed(2)}
     </td>
 
-    <td className="px-6 py-3 text-right text-gray-700 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-right text-gray-700 dark:text-gray-300 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       {parseFloat(product.retailPrice).toFixed(2)}
     </td>
 
-    <td className="px-6 py-3 text-center space-x-2 border-r border-gray-200 last:border-r-0">
+    <td className="px-6 py-3 text-center space-x-2 border-r border-gray-200 dark:border-gray-700 last:border-r-0">
       <button
         onClick={() => handleEdit(product)}
         className="px-4 py-1 bg-blue-300 text-white rounded hover:bg-blue-400 text-sm"
@@ -143,22 +143,22 @@ renderRow={(product) => (
 
         {/* Pagination Controls */}
         {products.length > 0 && (
-          <div className="flex items-center justify-between mt-4 pt-4 border-t">
-            <div className="text-sm text-gray-600">
+          <div className="flex items-center justify-between mt-4 pt-4 border-t dark:border-gray-700">
+            <div className="text-sm text-gray-600 dark:text-gray-400">
               Page {currentPage} of {totalPages} ({products.length} products)
             </div>
             <div className="flex gap-2">
               <button
                 onClick={goToPreviousPage}
                 disabled={currentPage === 1}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded hover:bg-gray-300 dark:hover:bg-gray-600 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Previous
               </button>
               <button
                 onClick={goToNextPage}
                 disabled={currentPage === totalPages}
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 disabled:bg-gray-100 dark:disabled:bg-gray-800 disabled:text-gray-400 disabled:cursor-not-allowed"
               >
                 Next
               </button>
