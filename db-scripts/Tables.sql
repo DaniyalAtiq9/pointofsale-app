@@ -29,6 +29,9 @@ CREATE TABLE SalesMaster (
     FOREIGN KEY (SalespersonId)
     REFERENCES Salesperson(SalespersonID)
 );
+ALTER TABLE SalesMaster
+ADD EditDate DATETIME NULL;
+GO
 
 CREATE TABLE SalesDetail (
     SaleDetailId INT IDENTITY(1,1) PRIMARY KEY,
@@ -46,3 +49,4 @@ CREATE TABLE SalesDetail (
     CONSTRAINT FK_SalesDetail_Product
     FOREIGN KEY (ProductId)
     REFERENCES Product(ProductId)
+    );
