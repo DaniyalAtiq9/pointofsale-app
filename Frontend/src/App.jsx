@@ -19,12 +19,10 @@ function App() {
             {/* Toast container MUST be inside app tree */}
             <ToastContainer position="top-right" autoClose={2000} />
 
-            <div className="min-h-screen bg-white pt-1 pb-4 px-4">
-              <div className="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-lg border border-gray-200">
-
-              {/* Navigation */}
-              <nav className="bg-blue-600">
-                <div className="px-4">
+            <div className="min-h-screen bg-white flex flex-col">
+              {/* Navigation - full width */}
+              <nav className="bg-blue-600 w-full">
+                <div className="px-6">
                   <div className="flex items-center justify-between h-16">
                     <div className="flex items-center gap-8">
                       <h1 className="text-2xl font-bold text-white">POS</h1>
@@ -48,7 +46,7 @@ function App() {
               </nav>
 
               {/* Routes */}
-              <div>
+              <div className="flex-1 max-w-5xl w-full mx-auto py-4 px-4">
                 <Routes>
                   <Route path="/" element={<PointOfSale />} />
                   <Route path="/products" element={<ProductsPage />} />
@@ -56,16 +54,14 @@ function App() {
                 </Routes>
               </div>
 
-              {/* Footer */}
-              <footer className="bg-blue-600">
-                <div className="px-4">
+              {/* Footer - full width */}
+              <footer className="bg-blue-600 w-full">
+                <div className="px-6">
                   <div className="flex items-center justify-center h-16">
                     <p className="text-white text-sm">© 2026 POS System. All rights reserved.</p>
                   </div>
                 </div>
               </footer>
-
-              </div>
             </div>
           </BrowserRouter>
         </SalesProvider>
