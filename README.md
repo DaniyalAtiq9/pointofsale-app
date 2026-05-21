@@ -87,29 +87,29 @@ PointOfSaleApp/
         SalesDetailResponse.cs
     Repositories/
       Product/
-        Interface/IProductRepository.cs
+        IProductRepository.cs
         ProductRepository.cs
       Salesperson/
-        Interface/ISalespersonRepository.cs
+        ISalespersonRepository.cs
         SalespersonRepository.cs
       SalesMaster/
-        Interface/ISalesMasterRepository.cs
+        ISalesMasterRepository.cs
         SalesMasterRepository.cs
       SalesDetail/
-        Interface/ISalesDetailRepository.cs
+        ISalesDetailRepository.cs
         SalesDetailRepository.cs
     Services/
       Product/
-        Interface/IProductService.cs
+        IProductService.cs
         ProductService.cs
       Salesperson/
-        Interface/ISalespersonService.cs
+        ISalespersonService.cs
         SalespersonService.cs
       SalesMaster/
-        Interface/ISalesMasterService.cs
+        ISalesMasterService.cs
         SalesMasterService.cs
       SalesDetail/
-        Interface/ISalesDetailService.cs
+        ISalesDetailService.cs
         SalesDetailService.cs
     Program.cs
     appsettings.json
